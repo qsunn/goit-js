@@ -21,4 +21,4 @@ images.forEach(item => {
     result += li.outerHTML;
 });
 
-document.querySelector('.gallery').insertAdjacentHTML('beforeend', result);
+document.querySelector('.gallery').append(document.createRange().createContextualFragment(result));

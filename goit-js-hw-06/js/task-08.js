@@ -1,15 +1,15 @@
 const form = document.querySelector('.login-form');
-const inputs = [...form.elements];
-const submit = inputs.pop();
+const inputs = [...document.querySelectorAll('input')];
 
 const reset = () => inputs.forEach(input => input.value = '');
 const submitHandler = (event) => {
     event.preventDefault();
     const validate = inputs.filter(input => input.value.trim()).length === inputs.length;
     if (validate) {
-        const data = {};
-        data.email = inputs.find(input => input.name === 'email').value;
-        data.password = inputs.find(input => input.name === 'password').value;
+        const data = {
+            email: event.target.elements.email.value,
+            password: event.target.elements.password.value
+        };
         console.log(data);
         reset();
     } else {
