@@ -18,5 +18,5 @@ const generateGallery = gallery => {
         })
         .join('');
 };
-gallery.insertAdjacentHTML('beforeend', document.createElement('li').innerHTML = generateGallery(galleryItems));
+gallery.insertAdjacentHTML('beforeend', generateGallery(galleryItems));
 new SimpleLightbox('.gallery a', {captionsData: 'alt', captionDelay: 250});
