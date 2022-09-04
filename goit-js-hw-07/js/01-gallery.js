@@ -29,5 +29,9 @@ gallery.insertAdjacentHTML('beforeend', generateGallery(galleryItems));
 
 gallery.addEventListener('click', (event) => {
     event.preventDefault();
-    if (event.target.tagName === 'IMG') basicLightbox.create(`<img src="${event.target.getAttribute('data-source')}" width="800" height="600">`).show();
+    if (event.target.tagName === 'IMG') {
+        basicLightbox
+            .create(`<img src="${event.target.getAttribute('data-source')}" width="800" height="600">`)
+            .show();
+    }
 })
